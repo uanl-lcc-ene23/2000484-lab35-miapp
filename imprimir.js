@@ -1,14 +1,19 @@
-//Archivo de Javascript
+let usuarioTXT = document.getElementById("usuario");
+let p = document.getElementById("mensaje");
 
 
-var campoTexto= document.getElementById("campoTexto");
+function login(){
+    //login aqui
+    p.innerHTML = "Login correcto, " + usuarioTXT.value;
 
-console.log(campoTexto);
+    limpiar();
+}
 
-function imprimir(){
-    console.log(campoTexto.value);
+function registro(){
+    p.innerHTML = "Registro correcto, " + usuarioTXT.value;
 }
 
 function limpiar(){
-    campoTexto = " ";
+
+
 }

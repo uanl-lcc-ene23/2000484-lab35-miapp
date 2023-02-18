@@ -1,21 +1,33 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
-    <title>Practica 1</title>
 
-    <link rel="stylesheet" href="estilos.css"
-</head>
-<body>
-    <div class="container">
-    <h1>Titulo 1</h1>
-    <p>Parrafo de texto</p>
-
-    <input type="text" id="campoTexto">
-    <button onclick="imprimir()"> Imprimir mensaje en Consola</button>
-    <button  onclick="limpiar()">  Borrar texto</button>
-    </div>
-</body>
+  <link rel="stylesheet" href="estilos.css">
   <script src="imprimir.js"></script>
+</head>
+
+<body>
+  <h1>Practica 3</h1>
+  <h2>Registro de Usuario</h2>
+
+  <div class="fila">
+    <label for="usuario">Usuario: </label>
+    <input type="text" id="usuario">
+  </div>
+
+  <div class="fila">
+    <label for="password">Password: </label>
+    <input type="password" id="password">
+  </div>
+
+  <div class="fila botones">
+    <button onclick="login()">Iniciar sesión</button>
+    <button onclick="registro()">Registro</button>
+  </div>
+  <p id="mensaje"></p>
+
+
+</body>
 
 </html>
