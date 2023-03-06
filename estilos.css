@@ -1,38 +1,51 @@
-body{
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-
-
-button{
-    display: block;
-    color:#B7C7C4;
-    background-color:#22B5E1;
-    margin-top:18px;
-    border: none;
-    padding: 10px;
+body {
+    background-color: #87CEFA; 
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  label {
+    font-size: 20px;
     font-weight: bold;
-    border-radius: 20px;
-    font-size: 20px;
-
-}
-
-.fila{
-    margin-top: 10px;
+    margin-right: 10px;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    width: 200px;
+    height: 30px;
+    font-size: 16px;
     margin-bottom: 10px;
-}
-
-.botones button{
-    display: block;
-    width: 15%;
-}
-
-input {
+    padding-left: 5px;
+    border-radius: 5px;
     border: none;
-    padding: 12px;
-    background: #F0F4F3;
-}
-
-label, input {
+  }
+  
+  input[type="submit"] {
+    width: 120px;
+    height: 40px;
     font-size: 20px;
-}
+    font-weight: bold;
+    color: #87CEFA; 
+    background-color: #FFFFFF; 
+    border: 2px solid #000000; 
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #87CEFA;
+    color: #FFFFFF; 
+  }
+  
+  #registroComentario,
+  #bienvenidaComentario {
+    margin-top: 20px;
+  }
+  

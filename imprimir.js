@@ -1,19 +1,50 @@
-let usuarioTXT = document.getElementById("usuario");
-let p = document.getElementById("mensaje");
+// Obtener los elementos del formulario
+const form = document.querySelector('form');
+const username = document.querySelector('#username');
+const password = document.querySelector('#password');
+const registroComentario = document.querySelector('#registroComentario');
+const bienvenidaComentario = document.querySelector('#bienvenidaComentario');
 
 
-function login(){
-    //login aqui
-    p.innerHTML = "Login correcto, " + usuarioTXT.value;
-
-    limpiar();
-}
-
-function registro(){
-    p.innerHTML = "Registro correcto, " + usuarioTXT.value;
-}
-
-function limpiar(){
+form.addEventListener('submit', (event) => {
+  event.preventDefault(); 
+});
 
 
-}
+document.querySelector('[value="Iniciar sesión"]').onclick = () => {
+	// Obtener los valores de los campos de entrada
+	const usernameValue = username.value.trim();
+	const passwordValue = password.value.trim();
+  
+
+	if (usernameValue === '' || passwordValue === '') {
+	  alert('Por favor, rellena todos los campos.');
+	} else {
+
+	  bienvenidaComentario.textContent = `Bienvenido: ${usernameValu}`;
+	  registroComentario.textContent = ''; 
+  
+
+	  username.value = '';
+	  password.value = '';
+	}
+  };
+
+
+document.querySelector('[value="Registrar"]').onclick = () => {
+  // Obtener los valores de los campos de entrada
+  const usernameValue = username.value.trim();
+  const passwordValue = password.value.trim();
+
+
+  if (usernameValue === '' || passwordValue === '') {
+    alert('Por favor, rellena todos los campos.');
+  } else {
+
+    registroComentario.textContent = `Registrado: ${usernameValue}`;
+
+
+    username.value = '';
+    password.value = '';
+  }
+};
