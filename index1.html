@@ -1,27 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Formulario de inicio de sesión y registro</title>
-	<link rel="stylesheet" type="text/css" href="estilos.css"> 
+	<meta charset="UTF-8">
+	<title>Practica 4</title>
+	<script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+	<script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+	
 </head>
 <body>
-	<h1>Inicio de sesión y registro</h1>
-
-	<form>
-		<label for="username">Nombre de usuario:</label>
-		<input type="text" id="username" name="username"><br><br>
-
-		<label for="password">Contraseña:</label>
-		<input type="password" id="password" name="password"><br><br>
-
-		<input type="submit" value="Iniciar sesión" onclick="login()">
-		<input type="submit" value="Registrar" onclick="registrar()">
-	</form>
-
-	<p id="registroComentario"></p>
-	<p id="bienvenidaComentario"></p>
-
-
-	<script type="text/javascript" src="imprimir.js"></script>
+	<ion-header>
+		<ion-toolbar>
+		  <ion-title>
+			Presupuesto
+		  </ion-title>
+		</ion-toolbar>
+	</ion-header>
+	<ion-content>
+		<ion-grid>
+			<ion-row>
+				<ion-col size-md="6" offset-md="3">
+					<div>
+						<ion-item>
+							<ion-label>Tipo de Gasto</ion-label>
+							<ion-input type="text" id="tipo-gasto"></ion-input>
+						</ion-item>
+						<ion-item>
+							<ion-label>Monto</ion-label>
+							<ion-input type="number" id="monto-gasto"></ion-input>
+						</ion-item>
+						<ion-button expand="block" id="guardar-gasto">Guardar</ion-button>
+					</div>
+				</ion-col>
+			</ion-row>
+			<ion-row>
+				<ion-col size-md="8" offset-md="2">
+					<ion-list id="lista-gastos">
+						
+					</ion-list>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+	</ion-content>
+	<script src="imprimir.js"></script>
 </body>
 </html>

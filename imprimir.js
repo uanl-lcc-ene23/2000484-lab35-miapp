@@ -1,50 +1,33 @@
-// Obtener los elementos del formulario
-const form = document.querySelector('form');
-const username = document.querySelector('#username');
-const password = document.querySelector('#password');
-const registroComentario = document.querySelector('#registroComentario');
-const bienvenidaComentario = document.querySelector('#bienvenidaComentario');
+const listaGastos = [];
+const tipoGastoInput = document.getElementById("tipo-gasto");
+const montoGastoInput = document.getElementById("monto-gasto");
+const guardarGastoButton = document.getElementById("guardar-gasto");
+const listaGastosElement = document.getElementById("lista-gastos");
 
-
-form.addEventListener('submit', (event) => {
-  event.preventDefault(); 
-});
-
-
-document.querySelector('[value="Iniciar sesión"]').onclick = () => {
-	// Obtener los valores de los campos de entrada
-	const usernameValue = username.value.trim();
-	const passwordValue = password.value.trim();
-  
-
-	if (usernameValue === '' || passwordValue === '') {
-	  alert('Por favor, rellena todos los campos.');
-	} else {
-
-	  bienvenidaComentario.textContent = `Bienvenido: ${usernameValu}`;
-	  registroComentario.textContent = ''; 
-  
-
-	  username.value = '';
-	  password.value = '';
-	}
-  };
-
-
-document.querySelector('[value="Registrar"]').onclick = () => {
-  // Obtener los valores de los campos de entrada
-  const usernameValue = username.value.trim();
-  const passwordValue = password.value.trim();
-
-
-  if (usernameValue === '' || passwordValue === '') {
-    alert('Por favor, rellena todos los campos.');
+function agregarGasto() {
+  const tipoGasto = tipoGastoInput.value;
+  const montoGasto = parseFloat(montoGastoInput.value);
+  if (tipoGasto.trim() !== "" && !isNaN(montoGasto)) {
+    const gasto = {
+      tipo: tipoGasto,
+      monto: montoGasto
+    };
+    listaGastos.push(gasto);
+    actualizarListaGastos();
+    tipoGastoInput.value = "";
+    montoGastoInput.value = "";
   } else {
-
-    registroComentario.textContent = `Registrado: ${usernameValue}`;
-
-
-    username.value = '';
-    password.value = '';
+    alert("Ingrese un tipo de gasto y un monto válido.");
   }
-};
+}
+
+function actualizarListaGastos() {
+  listaGastosElement.innerHTML = "";
+  listaGastos.forEach((gasto) => {
+    const item = document.createElement("ion-item");
+    item.textContent = `${gasto.tipo}: $${gasto.monto.toFixed(2)}`;
+    listaGastosElement.appendChild(item);
+  });
+}
+
+guardarGastoButton.addEventListener("click", agregarGasto);
