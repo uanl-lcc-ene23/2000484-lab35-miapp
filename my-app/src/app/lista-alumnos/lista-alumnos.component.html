@@ -1,4 +1,5 @@
-<ion-header>
+<ion-content>
+  <ion-header>
     <ion-toolbar>
       <ion-title>
         Lista de Alumnos
@@ -7,17 +8,17 @@
   </ion-header>
   
   <ion-list>
-    <ion-item-sliding *ngFor="let alumno of alumnos">
+    <ion-item-sliding *ngFor="let alumno of alumnos; let i = index">
       <ion-item>
         <ion-label>{{ alumno }}</ion-label>
       </ion-item>
       <ion-item-options side="end">
-        <ion-item-option color="warning" expandable>Eliminar</ion-item-option>
-        <ion-item-option color="success" expandable>Favorito</ion-item-option>
+        <ion-item-option color="warning" expandable (click)="eliminarAlumno(i)">Eliminar</ion-item-option>
+        <ion-item-option color="success" expandable (click)="marcarFavorito(i)">Favorito</ion-item-option>
       </ion-item-options>
     </ion-item-sliding>
   </ion-list>
   
-    <ion-button expand="block" (click)="agregarAlumno()">Agregar Alumno</ion-button>
+  <ion-button expand="block" (click)="agregarAlumno()">Agregar Alumno</ion-button>
   
-  </ion-content>
+</ion-content>

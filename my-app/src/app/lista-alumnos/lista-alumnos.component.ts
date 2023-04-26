@@ -19,4 +19,12 @@ export class ListaAlumnosComponent {
   agregarAlumno() {
     this.alumnos.push("Nuevo Alumno");
   }
+
+  eliminarAlumno(index: number) {
+    this.alumnos.splice(index, 1);
+  }
+
+  marcarFavorito(index: number) {
+    
+  }
 }
