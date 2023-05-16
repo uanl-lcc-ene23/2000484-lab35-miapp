@@ -5,6 +5,20 @@
         </ion-toolbar>
     </ion-header>
     <ion-content>
-        <app-productos></app-productos>
+        <router-outlet></router-outlet>
     </ion-content>
+    <ion-footer>
+        <ion-toolbar>
+            <ion-tabs>
+                <ion-tab-bar slot="bottom">
+                    <ion-tab-button routerLink="/inicio">
+                        Inicio
+                    </ion-tab-button>
+                    <ion-tab-button routerLink="/buscar">
+                        Buscar
+                    </ion-tab-button>
+                </ion-tab-bar>
+            </ion-tabs>
+        </ion-toolbar>
+    </ion-footer>
 </ion-app>

@@ -8,16 +8,16 @@ export class ProductosService {
 
   constructor(private http: HttpClient) { }
 
-  getProductos(){ 
+  getProductos(){ //Todos los productos
     return this.http.get('https://fakestoreapi.com/products');
   }
-  getCategorias(){ 
+  getCategorias(){ //Todas las categorias
     return this.http.get('https://fakestoreapi.com/products/categories');
   }
-  getCategoria(category: string){
+  getCategoria(category: string){//Productos por categoria
     return this.http.get('https://fakestoreapi.com/products/category/'+category);
   }
-  getProducto(){ 
-    
+  getProducto(idProducto: number){ //Obtiene producto en particular -- por id
+    return this.http.get('https://fakestoreapi.com/products/'+idProducto);
   }
 }
