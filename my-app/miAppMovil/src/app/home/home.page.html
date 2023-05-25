@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
- Mi galleria de fotos
+      Mi aplicacion de fotos
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -12,19 +12,19 @@
       <ion-title size="large">Blank</ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-grid>
-    <ion-row>
-      <ion-col size="6" *ngFor="let photo of fotoS; index as position">
-        <ion-img [src]="photo.webviewPath"></ion-img>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
 
-  <div id="container">
-    <ion-fab horizontal="end" vertical="bottom">
-      <ion-fab-button (click)="tomarFoto()">
-        <ion-icon name="camera-outline"></ion-icon>
-      </ion-fab-button>
-    </ion-fab>
-  </div>
+  <ion-fab slot="fixed" vertical="top" horizontal="end" [edge]="true">
+    <ion-fab-button (click)="tomarFoto()">
+      <ion-icon name="camera-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+<ion-grid>
+  <ion-row>
+    <ion-col size="6" *ngFor="let foto of fotos; index as position">
+      <ion-img [src]="foto.webviewPath"></ion-img>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
 </ion-content>

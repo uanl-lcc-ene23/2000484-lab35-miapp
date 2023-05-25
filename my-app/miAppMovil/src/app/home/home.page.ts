@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FotoService } from '../foto.service';
+import { FotoServiceService } from '../foto.service';
 
 @Component({
   selector: 'app-home',
@@ -8,12 +8,13 @@ import { FotoService } from '../foto.service';
 })
 export class HomePage {
 
-  constructor(private fotoService: FotoService) {}
-  fotoS = this.fotoService.foto;
+  constructor(private fotoService: FotoServiceService) {}
 
-  tomarFoto() {
+  fotos = this.fotoService.foto;
+
+  tomarFoto(){
     this.fotoService.addNewToGallery();
-    this.fotoS = this.fotoService.foto;
+    this.fotos = this.fotoService.foto;
   }
 
 }
